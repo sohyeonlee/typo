@@ -146,7 +146,14 @@
     <ul id='attachments' class='inputs-list'>
       <%= render 'admin/content/attachment', { :attachment_num => 1, :hidden => false } -%>
     </ul>
-  </div>    
+  </div>
+  
+  <div class=''>
+	<h4><%= _("Merge Articles")%></h4>
+	<%= form_for @article, :url => articles_merge_path(@article) do |f| %>
+	  Article ID <%= f.text_field :name %><br />
+	  <%= f.submit "Merge", class: "btn btn-primary"%>
+	<% end %>
   </div>
 
 </div>
